@@ -14,7 +14,6 @@ env:
   EC2_HOST: api.134.works
   SERVICE_HOME: ${{ vars.EUREKA_HOME }}
   SCRIPT: shell/eureka-deploy.sh
-  SCRIPT_PATH: $SERVICE_HOME/$SCRIPT
   
 permissions:
   contents: read
@@ -58,4 +57,4 @@ jobs:
         host: ${{ env.EC2_HOST }}
         key: ${{ secrets.PRIVATE_KEY }}
         script_stop: true
-        script: chmod 744 ${{ env.SCRIPT_PATH }} && ${{ env.SCRIPT_PATH }}
+        script: chmod 744 ${{ env.SERVICE_HOME }}/${{ env.SCRIPT }} && ${{ env.SERVICE_HOME }}/${{ env.SCRIPT }}

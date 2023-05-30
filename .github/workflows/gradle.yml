@@ -14,7 +14,7 @@ env:
   EC2_HOST: api.134.works
   SERVICE_HOME: ${{ vars.EUREKA_HOME }}
   SCRIPT: shell/eureka-deploy.sh
-  SCRIPT_PATH: ${{ env.SERVICE_HOME }}/${{ env.SCRIPT }}
+  SCRIPT_PATH: $SERVICE_HOME/$SCRIPT
   
 permissions:
   contents: read
